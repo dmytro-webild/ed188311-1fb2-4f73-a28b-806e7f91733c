@@ -156,22 +156,22 @@ export default function LandingPage() {
           animationType="scale-rotate"
           metrics={[
             {
-              id: "metric-1",              value: "3+",              title: "Projects Delivered",              description: "Successfully completed projects across industries",              icon: CheckCircle
+              id: "metric-1",              value: "150+",              title: "Projects Delivered",              description: "Successfully completed projects across diverse industries and markets",              icon: CheckCircle
             },
             {
-              id: "metric-2",              value: "98%",              title: "Client Satisfaction",              description: "Repeat clients and positive testimonials",              icon: Star
+              id: "metric-2",              value: "98%",              title: "Client Satisfaction",              description: "Repeat clients and positive testimonials from satisfied partners",              icon: Star
             },
             {
-              id: "metric-3",              value: "1+",              title: "Years in Business",              description: "Trusted partner for digital transformation",              icon: Briefcase
+              id: "metric-3",              value: "8+",              title: "Years in Business",              description: "Trusted partner for digital transformation and creative excellence",              icon: Briefcase
             },
             {
-              id: "metric-4",              value: "5+",              title: "Team Members",              description: "Diverse experts in design and technology",              icon: Users
+              id: "metric-4",              value: "25+",              title: "Team Members",              description: "Diverse experts in design, development, and strategy",              icon: Users
             },
             {
-              id: "metric-5",              value: "$999+",              title: "Client Revenue Growth",              description: "Average revenue increase for our partners",              icon: TrendingUp
+              id: "metric-5",              value: "$45M+",              title: "Client Revenue Growth",              description: "Total revenue increase generated for our partners",              icon: TrendingUp
             },
             {
-              id: "metric-6",              value: "2 ",              title: "Industry Awards",              description: "helping local businesses achieve there dreams  ",              icon: Trophy
+              id: "metric-6",              value: "12",              title: "Industry Awards",              description: "Recognition for creative excellence and strategic innovation",              icon: Trophy
             }
           ]}
         />
