@@ -95,15 +95,15 @@ export default function LandingPage() {
           features={[
             {
               id: 1,
-              tag: "Design",              title: "Web Design",              subtitle: "Stunning Visual Experiences",              description: "We create beautiful, intuitive websites that captivate users and reflect your brand's unique personality. Every pixel is purposeful.",              imageSrc: "http://img.b2bpic.net/free-vector/flat-design-responsive-website-design_23-2149483806.jpg",              imageAlt: "Web design mockup showing responsive layouts and modern interface",              buttons: [{ text: "Explore Design Services", href: "#" }]
+              tag: "Design",              title: "Web Design",              subtitle: "Stunning Visual Experiences",              description: "We create beautiful, intuitive websites that captivate users and reflect your brand's unique personality. Every pixel is purposeful.",              imageSrc: "http://img.b2bpic.net/free-vector/flat-design-responsive-website-design_23-2149483806.jpg?_wi=1",              imageAlt: "Web design mockup showing responsive layouts and modern interface",              buttons: [{ text: "Explore Design Services", href: "#" }]
             },
             {
               id: 2,
-              tag: "Development",              title: "Web Development",              subtitle: "Powerful Technology Solutions",              description: "Our expert developers build fast, scalable, and secure web applications using cutting-edge technology stacks and best practices.",              imageSrc: "http://img.b2bpic.net/free-photo/desk-with-multiple-computer-monitors-displaying-parsing-code-programming-language-compiling-empty-software-developing-agency-office-servers-cloud-computing-big-data-algorithms_482257-33541.jpg",              imageAlt: "Developer workspace showing modern coding environment and tools",              buttons: [{ text: "Explore Development Services", href: "#" }]
+              tag: "Development",              title: "Web Development",              subtitle: "Powerful Technology Solutions",              description: "Our expert developers build fast, scalable, and secure web applications using cutting-edge technology stacks and best practices.",              imageSrc: "http://img.b2bpic.net/free-photo/desk-with-multiple-computer-monitors-displaying-parsing-code-programming-language-compiling-empty-software-developing-agency-office-servers-cloud-computing-big-data-algorithms_482257-33541.jpg?_wi=1",              imageAlt: "Developer workspace showing modern coding environment and tools",              buttons: [{ text: "Explore Development Services", href: "#" }]
             },
             {
               id: 3,
-              tag: "Branding",              title: "Strategic Branding",              subtitle: "Identity That Resonates",              description: "We develop comprehensive brand strategies and identities that tell your story, build trust, and create lasting connections with your audience.",              imageSrc: "http://img.b2bpic.net/free-photo/colleagues-generating-ideas_53876-42869.jpg",              imageAlt: "Branding guide showing color palette, logo concepts, and identity guidelines",              buttons: [{ text: "Explore Branding Services", href: "#" }]
+              tag: "Branding",              title: "Strategic Branding",              subtitle: "Identity That Resonates",              description: "We develop comprehensive brand strategies and identities that tell your story, build trust, and create lasting connections with your audience.",              imageSrc: "http://img.b2bpic.net/free-photo/colleagues-generating-ideas_53876-42869.jpg?_wi=1",              imageAlt: "Branding guide showing color palette, logo concepts, and identity guidelines",              buttons: [{ text: "Explore Branding Services", href: "#" }]
             }
           ]}
         />
@@ -189,7 +189,7 @@ export default function LandingPage() {
           features={[
             {
               id: "feature-1",              title: "Strategic Approach",              description: "Every project starts with deep research and strategic planning to ensure we deliver solutions that drive real business results.",              media: {
-                imageSrc: "http://img.b2bpic.net/free-vector/flat-design-responsive-website-design_23-2149483806.jpg",                imageAlt: "Strategic planning and research visualization"
+                imageSrc: "http://img.b2bpic.net/free-vector/flat-design-responsive-website-design_23-2149483806.jpg?_wi=2",                imageAlt: "Strategic planning and research visualization"
               },
               items: [
                 { icon: Brain, text: "Data-driven insights" },
@@ -200,7 +200,7 @@ export default function LandingPage() {
             },
             {
               id: "feature-2",              title: "Creative Excellence",              description: "Our designers and creatives push boundaries to create work that captivates, inspires, and differentiates your brand in the market.",              media: {
-                imageSrc: "http://img.b2bpic.net/free-photo/colleagues-generating-ideas_53876-42869.jpg",                imageAlt: "Creative design process and artistic excellence"
+                imageSrc: "http://img.b2bpic.net/free-photo/colleagues-generating-ideas_53876-42869.jpg?_wi=2",                imageAlt: "Creative design process and artistic excellence"
               },
               items: [
                 { icon: Palette, text: "Innovative design" },
@@ -211,7 +211,7 @@ export default function LandingPage() {
             },
             {
               id: "feature-3",              title: "Technical Mastery",              description: "Our developers leverage cutting-edge technologies and best practices to build robust, scalable, and secure digital solutions.",              media: {
-                imageSrc: "http://img.b2bpic.net/free-photo/desk-with-multiple-computer-monitors-displaying-parsing-code-programming-language-compiling-empty-software-developing-agency-office-servers-cloud-computing-big-data-algorithms_482257-33541.jpg",                imageAlt: "Advanced development and technology implementation"
+                imageSrc: "http://img.b2bpic.net/free-photo/desk-with-multiple-computer-monitors-displaying-parsing-code-programming-language-compiling-empty-software-developing-agency-office-servers-cloud-computing-big-data-algorithms_482257-33541.jpg?_wi=2",                imageAlt: "Advanced development and technology implementation"
               },
               items: [
                 { icon: Code, text: "Modern stack" },
