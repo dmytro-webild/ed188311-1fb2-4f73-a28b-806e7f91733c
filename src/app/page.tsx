@@ -122,13 +122,13 @@ export default function LandingPage() {
               id: "metric-3",              value: "1+",              title: "Years in Business",              description: "Trusted partner for digital transformation",              icon: Briefcase
             },
             {
-              id: "metric-4",              value: "50+",              title: "Team Members",              description: "Diverse experts in design and technology",              icon: Users
+              id: "metric-4",              value: "5+",              title: "Team Members",              description: "Diverse experts in design and technology",              icon: Users
             },
             {
-              id: "metric-5",              value: "$50M+",              title: "Client Revenue Growth",              description: "Average revenue increase for our partners",              icon: TrendingUp
+              id: "metric-5",              value: "$999+",              title: "Client Revenue Growth",              description: "Average revenue increase for our partners",              icon: TrendingUp
             },
             {
-              id: "metric-6",              value: "25",              title: "Industry Awards",              description: "Recognition for excellence and innovation",              icon: Trophy
+              id: "metric-6",              value: "2 ",              title: "Industry Awards",              description: "helping local businesses achieve there dreams  ",              icon: Trophy
             }
           ]}
         />
