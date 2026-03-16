@@ -113,13 +113,13 @@ export default function LandingPage() {
           animationType="scale-rotate"
           metrics={[
             {
-              id: "metric-1",              value: "500+",              title: "Projects Delivered",              description: "Successfully completed projects across industries",              icon: CheckCircle
+              id: "metric-1",              value: "3+",              title: "Projects Delivered",              description: "Successfully completed projects across industries",              icon: CheckCircle
             },
             {
               id: "metric-2",              value: "98%",              title: "Client Satisfaction",              description: "Repeat clients and positive testimonials",              icon: Star
             },
             {
-              id: "metric-3",              value: "12+",              title: "Years in Business",              description: "Trusted partner for digital transformation",              icon: Briefcase
+              id: "metric-3",              value: "1+",              title: "Years in Business",              description: "Trusted partner for digital transformation",              icon: Briefcase
             },
             {
               id: "metric-4",              value: "50+",              title: "Team Members",              description: "Diverse experts in design and technology",              icon: Users
