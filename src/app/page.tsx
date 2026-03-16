@@ -2,7 +2,7 @@
 
 import { ThemeProvider } from "@/providers/themeProvider/ThemeProvider";
 import NavbarLayoutFloatingInline from "@/components/navbar/NavbarLayoutFloatingInline";
-import HeroSplitKpi from "@/components/sections/hero/HeroSplitKpi";
+import HeroLogoBillboard from "@/components/sections/hero/HeroLogoBillboard";
 import TextAbout from "@/components/sections/about/TextAbout";
 import FeatureCardNineteen from "@/components/sections/feature/FeatureCardNineteen";
 import MetricCardOne from "@/components/sections/metrics/MetricCardOne";
@@ -43,27 +43,18 @@ export default function LandingPage() {
       </div>
 
       <div id="hero" data-section="hero">
-        <HeroSplitKpi
-          title="Transform Your Digital Vision Into Reality"
+        <HeroLogoBillboard
+          logoText="CreativeStudio"
           description="We're a forward-thinking creative web agency specializing in stunning design, powerful development, and strategic branding that drives measurable results for ambitious brands."
-          tag="Award-Winning Creative Studio"
-          tagIcon={Sparkles}
-          tagAnimation="slide-up"
           buttons={[
             { text: "Start Your Project", href: "#contact" },
             { text: "View Our Work", href: "#work" }
           ]}
           buttonAnimation="slide-up"
-          kpis={[
-            { value: "500+", label: "Projects Completed" },
-            { value: "98%", label: "Client Satisfaction" },
-            { value: "12+", label: "Years Excellence" }
-          ]}
-          enableKpiAnimation={true}
           imageSrc="http://img.b2bpic.net/free-photo/young-creative-people-working-together-with-laptop-group-cool-guys-working-new-project-while-spending-time-modern-office_574295-5685.jpg"
           imageAlt="Creative agency dashboard showcasing modern design tools and portfolio"
           mediaAnimation="slide-up"
-          imagePosition="right"
+          frameStyle="card"
           background={{ variant: "sparkles-gradient" }}
         />
       </div>
