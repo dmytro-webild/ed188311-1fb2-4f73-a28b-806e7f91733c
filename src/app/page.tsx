@@ -44,7 +44,7 @@ export default function LandingPage() {
 
       <div id="hero" data-section="hero">
         <HeroLogoBillboard
-          logoText="CreativeStudio"
+          logoText="buildex "
           description="We're a forward-thinking creative web agency specializing in stunning design, powerful development, and strategic branding that drives measurable results for ambitious brands."
           buttons={[
             { text: "Start Your Project", href: "#contact" },
