@@ -30,12 +30,12 @@ export default function LandingPage() {
     setSubmitStatus("loading");
 
     try {
-      // Send form data to user's inbox via webild integration
+      // Send form data to jonathan123817@gmail.com
       const response = await fetch("/api/submit-project", {
         method: "POST",        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
-          source: "project-inquiry",          timestamp: new Date().toISOString()
+          recipientEmail: "jonathan123817@gmail.com",          source: "project-inquiry",          timestamp: new Date().toISOString()
         })
       });
 
@@ -308,7 +308,7 @@ export default function LandingPage() {
               <div className="text-center py-8">
                 <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-green-600">Thank You!</h3>
-                <p className="text-gray-600 mt-2">Your project inquiry has been sent to our inbox via Webild.</p>
+                <p className="text-gray-600 mt-2">Your project inquiry has been sent to jonathan123817@gmail.com</p>
               </div>
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-4">
@@ -377,7 +377,7 @@ export default function LandingPage() {
 
                 {submitStatus === "error" && (
                   <div className="bg-red-50 border border-red-200 text-red-700 text-sm font-medium p-3 rounded-lg">
-                    Failed to send your inquiry. Please check that Webild is properly configured in your settings, or try again in a moment.
+                    Failed to send your inquiry. Please try again in a moment.
                   </div>
                 )}
 
