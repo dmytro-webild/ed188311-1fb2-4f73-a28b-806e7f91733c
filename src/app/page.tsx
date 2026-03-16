@@ -11,8 +11,51 @@ import FeatureCardTen from "@/components/sections/feature/FeatureCardTen";
 import ContactText from "@/components/sections/contact/ContactText";
 import FooterCard from "@/components/sections/footer/FooterCard";
 import { Sparkles, Lightbulb, Zap, Award, Heart, Shield, Brain, Target, Palette, Code, Lock, CheckCircle, Star, Briefcase, Users, TrendingUp, Trophy, Linkedin, Twitter, Instagram, Github } from "lucide-react";
+import { useState } from "react";
 
 export default function LandingPage() {
+  const [showFormModal, setShowFormModal] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",    email: "",    company: "",    message: ""
+  });
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleFormSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitStatus("loading");
+
+    try {
+      // Send form data to user's inbox via email service
+      const response = await fetch("/api/submit-project", {
+        method: "POST",        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
+      });
+
+      if (response.ok) {
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", company: "", message: "" });
+        setTimeout(() => {
+          setShowFormModal(false);
+          setSubmitStatus("idle");
+        }, 2000);
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus("error");
+    }
+  };
+
+  const handleStartProject = () => {
+    setShowFormModal(true);
+  };
+
   return (
     <ThemeProvider
       defaultButtonVariant="icon-arrow"
@@ -36,7 +79,7 @@ export default function LandingPage() {
             { name: "Contact", id: "contact" }
           ]}
           button={{
-            text: "Start Project",            href: "#contact"
+            text: "Start Project",            onClick: handleStartProject
           }}
           animateOnLoad={true}
         />
@@ -47,7 +90,7 @@ export default function LandingPage() {
           logoText="buildex "
           description="We're a forward-thinking creative web agency specializing in stunning design, powerful development, and strategic branding that drives measurable results for ambitious brands."
           buttons={[
-            { text: "Start Your Project", href: "#contact" },
+            { text: "Start Your Project", onClick: handleStartProject },
             { text: "View Our Work", href: "#work" }
           ]}
           buttonAnimation="slide-up"
@@ -220,8 +263,8 @@ export default function LandingPage() {
           text="Ready to Transform Your Digital Future?"
           animationType="entrance-slide"
           buttons={[
-            { text: "Schedule a Consultation", href: "#" },
-            { text: "Get a Free Quote", href: "#" }
+            { text: "Schedule a Consultation", onClick: handleStartProject },
+            { text: "Get a Free Quote", onClick: handleStartProject }
           ]}
           background={{ variant: "sparkles-gradient" }}
           useInvertedBackground={false}
@@ -240,6 +283,111 @@ export default function LandingPage() {
           ]}
         />
       </div>
+
+      {/* Project Form Modal */}
+      {showFormModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6 relative">
+            <button
+              onClick={() => setShowFormModal(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+              aria-label="Close form"
+            >
+              ✕
+            </button>
+
+            <h2 className="text-2xl font-bold mb-2 text-foreground">Start Your Project</h2>
+            <p className="text-gray-600 mb-6">Tell us about your project and we'll be in touch soon.</p>
+
+            {submitStatus === "success" ? (
+              <div className="text-center py-8">
+                <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
+                <h3 className="text-lg font-semibold text-green-600">Thank You!</h3>
+                <p className="text-gray-600 mt-2">Your project inquiry has been sent to our inbox.</p>
+              </div>
+            ) : (
+              <form onSubmit={handleFormSubmit} className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleFormChange}
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="john@example.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    value={formData.company}
+                    onChange={handleFormChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Your Company"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    Project Details
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleFormChange}
+                    required
+                    rows={4}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Tell us about your project..."
+                  />
+                </div>
+
+                {submitStatus === "error" && (
+                  <div className="text-red-600 text-sm font-medium">
+                    An error occurred. Please try again.
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={submitStatus === "loading"}
+                  className="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {submitStatus === "loading" ? "Sending..." : "Send Project Inquiry"}
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
+      )}
     </ThemeProvider>
   );
 }
