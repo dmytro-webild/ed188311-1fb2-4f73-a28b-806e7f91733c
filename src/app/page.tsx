@@ -30,10 +30,13 @@ export default function LandingPage() {
     setSubmitStatus("loading");
 
     try {
-      // Send form data to user's inbox via email service
+      // Send form data to user's inbox via webild integration
       const response = await fetch("/api/submit-project", {
         method: "POST",        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          ...formData,
+          source: "project-inquiry",          timestamp: new Date().toISOString()
+        })
       });
 
       if (response.ok) {
@@ -44,6 +47,8 @@ export default function LandingPage() {
           setSubmitStatus("idle");
         }, 2000);
       } else {
+        const errorData = await response.json();
+        console.error("Form submission error:", errorData);
         setSubmitStatus("error");
       }
     } catch (error) {
@@ -303,7 +308,7 @@ export default function LandingPage() {
               <div className="text-center py-8">
                 <CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-4" />
                 <h3 className="text-lg font-semibold text-green-600">Thank You!</h3>
-                <p className="text-gray-600 mt-2">Your project inquiry has been sent to our inbox.</p>
+                <p className="text-gray-600 mt-2">Your project inquiry has been sent to our inbox via Webild.</p>
               </div>
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-4">
@@ -371,8 +376,8 @@ export default function LandingPage() {
                 </div>
 
                 {submitStatus === "error" && (
-                  <div className="text-red-600 text-sm font-medium">
-                    An error occurred. Please try again.
+                  <div className="bg-red-50 border border-red-200 text-red-700 text-sm font-medium p-3 rounded-lg">
+                    Failed to send your inquiry. Please check that Webild is properly configured in your settings, or try again in a moment.
                   </div>
                 )}
 
