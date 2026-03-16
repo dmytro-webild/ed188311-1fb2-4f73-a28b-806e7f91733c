@@ -231,7 +231,7 @@ export default function LandingPage() {
       <div id="footer" data-section="footer">
         <FooterCard
           logoText="CreativeStudio"
-          copyrightText="© 2025 CreativeStudio. All rights reserved."
+          copyrightText="© 2026 webdesignwithbildex All rights reserved."
           socialLinks={[
             { icon: Linkedin, href: "https://linkedin.com", ariaLabel: "Visit our LinkedIn profile" },
             { icon: Twitter, href: "https://twitter.com", ariaLabel: "Follow us on Twitter" },
