@@ -28,7 +28,7 @@ export default function LandingPage() {
     >
       <div id="nav" data-section="nav">
         <NavbarLayoutFloatingInline
-          brandName="CreativeStudio"
+          brandName="bildex "
           navItems={[
             { name: "Services", id: "services" },
             { name: "Work", id: "work" },
